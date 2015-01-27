@@ -2,14 +2,16 @@
 
 ##########################################################
 # This script will download the split gap minder zip file,
-# unzip it, 
+# unzip it,makes some directories, and backs up the data 
+# into an archive folder 
 ##########################################################
 
 
 echo Creating project directory structure
 sleep 2
 mkdir -v data code output data/archive
-
+echo Data, Code, Output and Data/Archive folders created
+sleep 2
 cd data
 
 # Fetch the zip file
@@ -19,7 +21,7 @@ ZIP_FILE_NAME="rawSplitCountries.zip"
 echo Downloading zipped data file from $ZIP_FILE_URL
 sleep 2
 curl -L $ZIP_FILE_URL -o $ZIP_FILE_NAME
-
+# curl downloads the file from internet
 echo Unzipping file. 
 sleep 2
 unzip $ZIP_FILE_NAME
